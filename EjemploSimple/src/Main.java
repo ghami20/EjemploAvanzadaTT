@@ -45,6 +45,8 @@ public class Main {
 
                 case 1: 
                 	
+                	controller.agregarUsuario(new Usuario("Agustin",
+                			"Agustin.mastriani@davinci.edu.ar","Alumno","davinci104"));
                 	//falta registrar :D
                     
                     break;
