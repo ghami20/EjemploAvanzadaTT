@@ -8,7 +8,6 @@ import javax.swing.JOptionPane;
 public class Main {
     public static void main(String[] args) {
         
-        ControllerUsuario controller = new ControllerUsuario();
         
         String[] acciones = { "Login", "Registrar", "Salir" };
         int menu = 0;
@@ -35,7 +34,7 @@ public class Main {
                     }
 
                     
-                    Usuario usuario = controller.login(nombre, contrasenia);
+                    Usuario usuario = Usuario.login(nombre, contrasenia).login(nombre, contrasenia);
                     if (usuario != null) {
                         JOptionPane.showMessageDialog(null, usuario);
                     } else {
@@ -45,7 +44,7 @@ public class Main {
 
                 case 1: 
                 	
-                	controller.Registrarse(new Usuario("Esteban",
+                	Usuario.Registrarse(new Usuario("Esteban",
                 			"Esteban.racana@davinci.edu.ar","Alumno","esteban123"));
                 	//falta registrar :D
                     
