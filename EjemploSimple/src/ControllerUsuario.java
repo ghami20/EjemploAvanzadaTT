@@ -4,6 +4,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.LinkedList;
 
+import javax.swing.JOptionPane;
+
 public class ControllerUsuario {
 
 	private static Connection con = Conexion.getInstance().getConnection();
@@ -52,10 +54,14 @@ public class ControllerUsuario {
 	}
 
 	public void Registrarse(Usuario nuevo) {
-		LinkedList<Usuario> usuarios = mostrarUsuarios();
-		for (Usuario creados : usuarios) {
-			
+		LinkedList<Usuario> creados = mostrarUsuarios();
+		for (Usuario creado : creados) {
+			if (creado.getEmail().equals(nuevo.email)) {
+				JOptionPane.showMessageDialog(null, "Usuario creado, con este mismo mail");
+				return;
+			}
 		}
+		agregarUsuario(nuevo);
 		
 	}
 	
@@ -71,7 +77,6 @@ public class ControllerUsuario {
 				String email = rs.getString("email");
 				String tipo = rs.getString("tipo");
 				String password = rs.getString("password");
-
 				usuarios.add(new Usuario(id, nombre, email, tipo, password));
 
 			}

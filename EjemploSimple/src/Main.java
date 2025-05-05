@@ -45,8 +45,8 @@ public class Main {
 
                 case 1: 
                 	
-                	controller.agregarUsuario(new Usuario("Agustin",
-                			"Agustin.mastriani@davinci.edu.ar","Alumno","davinci104"));
+                	controller.Registrarse(new Usuario("Esteban",
+                			"Esteban.racana@davinci.edu.ar","Alumno","esteban123"));
                 	//falta registrar :D
                     
                     break;
