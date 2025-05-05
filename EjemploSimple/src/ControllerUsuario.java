@@ -51,6 +51,14 @@ public class ControllerUsuario {
 		}
 	}
 
+	public void Registrarse(Usuario nuevo) {
+		LinkedList<Usuario> usuarios = mostrarUsuarios();
+		for (Usuario creados : usuarios) {
+			
+		}
+		
+	}
+	
 	public LinkedList<Usuario> mostrarUsuarios() {
 		LinkedList<Usuario> usuarios = new LinkedList<>();
 		try {
